@@ -6,28 +6,9 @@ on:
   pull_request:
     types: [ opened, synchronize, reopened ]
 jobs:
-#  checkout:
-#    name: Checkout
-#    runs-on: ubuntu-latest
-#    steps:
-#      - uses: actions/checkout@v4
-#        with:
-#          fetch-depth: 0  # Shallow clones should be disabled for a better relevancy of analysis
-#  db-setup:
-  #    name: Setup Mysql
-  #    runs-on: ubuntu-latest
-  #    needs: [ checkout ]
-  #    steps:
-  #      - name: db
-  #        run: sudo service mysql start
-  #      - name: ls
-  #        run: ls -las
-  #      - name: Create Database from script
-  #        run: mysql -u${{ secrets.DB_USER }} -p${{ secrets.DB_PASSWORD }} -e "source src/main/resources/script.sql"
   build:
     name: Build and analyze
     runs-on: ubuntu-latest
-    needs: [ checkout, db-setup ]
     steps:
       - uses: actions/checkout@v4
         with:

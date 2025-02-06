@@ -15,10 +15,11 @@ jobs:
           fetch-depth: 0  # Shallow clones should be disabled for a better relevancy of analysis
       - name: Set up MySQL
         uses: mirromutth/mysql-action@v1.1
+
+      - name: ls
+        run: ls -las
       - name: Create Database from script
-        run: mysql -u${{ secrets.DB_USER }} -p${{ secrets.DB_PASSWORD }} -e "source src/main/resources/create.sql"
-      - name: Create Database from script
-        run: mysql -u${{ secrets.DB_USER }} -p${{ secrets.DB_PASSWORD }} springboot < src/main/resources/script.sql
+        run: mysql -u${{ secrets.DB_USER }} -p${{ secrets.DB_PASSWORD }} -e "source src/main/resources/db.sql"
       - name: Install Chrome Browser
         uses: browser-actions/setup-chrome@latest
       - name: Set up JDK 21

@@ -44,7 +44,7 @@ jobs:
       - name: Charging artefact
         uses: actions/upload-artifact@v4
         with:
-          name: package
+          name: package.jar
           path: target/*.jar
   docker-build-image-api:
     if: ${{ github.ref == 'refs/heads/main' }}

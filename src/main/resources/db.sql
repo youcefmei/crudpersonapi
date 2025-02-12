@@ -18,6 +18,7 @@
 --
 -- Table structure for table `person`
 --
+CREATE DATABASE springboot;
 USE springboot;
 DROP TABLE IF EXISTS `person`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;

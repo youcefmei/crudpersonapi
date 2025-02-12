@@ -69,3 +69,10 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: package.jar
+      - name: Build and push
+        uses: docker/build-push-action@v5
+        with:
+          context: .
+          file: Dockerfile
+          push: true
+          tags: ${{ secrets.DOCKERHUB_USER }}/crudpersonapi:latest

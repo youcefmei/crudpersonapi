@@ -73,7 +73,7 @@ jobs:
       - name: show working directory
         run: pwd
       - name: List target directory
-        run: ls -la
+        run: ls -la target
       - name: Build and push
         uses: docker/build-push-action@v5
         with:

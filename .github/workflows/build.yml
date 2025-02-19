@@ -68,8 +68,8 @@ jobs:
       - name: Download a single artifact
         uses: actions/download-artifact@v4
         with:
-          name: package.jar
-          path: target/package/springbootapi-0.0.1-SNAPSHOT.jar
+          name: target.jar
+          path: target/springbootapi-0.0.1-SNAPSHOT.jar
       - name: show working directory
         run: pwd
       - name: List target directory

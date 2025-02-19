@@ -65,8 +65,9 @@ jobs:
         with:
           username: ${{secrets.DOCKERHUB_USER}}
           password: ${{secrets.DOCKERHUB_PASSWORD}}
-      - name: Download a single artifact
-        uses: actions/download-artifact@v4
+      - uses: actions/download-artifact@v4
+        with:
+          path: target
       - name: show working directory
         run: pwd
       - name: Build and push

@@ -41,6 +41,8 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         run: mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=youcefmei_crudpersonapi
+      - name: List files in target directory
+        run: ls -l target/
       - name: Charging artefact
         uses: actions/upload-artifact@v4
         with:
@@ -71,8 +73,8 @@ jobs:
           name: package.jar
       - name: show working directory
         run: pwd
-      - name: List target directory
-        run: ls -la /target
+#      - name: List target directory
+#        run: ls -la /target
       - name: Build and push
         uses: docker/build-push-action@v5
         with:

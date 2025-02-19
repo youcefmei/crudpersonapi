@@ -45,7 +45,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: package.jar
-          path: target/springbootapi-0.0.1-SNAPSHOT.jar
+          path: target/*.jar
   docker-build-image-api:
     if: ${{ github.ref == 'refs/heads/main' }}
     runs-on: ubuntu-latest
@@ -69,7 +69,6 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: package.jar
-          path: target/*.jar
       - name: show working directory
         run: pwd
       - name: List target directory
